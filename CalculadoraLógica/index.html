@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora lógica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculadora Lógica</h1>
+        <input type="text" id="formula" class="display" placeholder="Ingrese la fórmula lógica">
+        <div class="keyboard">
+            <button onclick="insertSymbol('p')">p</button>
+            <button onclick="insertSymbol('q')">q</button>
+            <button onclick="insertSymbol('r')">r</button>
+            <button onclick="insertSymbol('s')">s</button>
+            <button onclick="insertSymbol('t')">t</button>
+            <button onclick="insertSymbol('∧')">∧</button>
+            <button onclick="insertSymbol('∨')">∨</button>
+            <button onclick="insertSymbol('¬')">¬</button>
+            <button onclick="insertSymbol('→')">→</button>
+            <button onclick="insertSymbol('↔')">↔</button>
+            <button onclick="insertSymbol('(')">(</button>
+            <button onclick="insertSymbol(')')">)</button>
+            <button class="btn-clear" onclick="clearInput()">Limpiar</button>
+            <button class="btn-delete" onclick="deleteLast()">Borrar</button>
+            <button class="btn-equal" colspan="2" onclick="generateTruthTable()">Generar</button>
+        </div>
+        <div class="variable-filters" style="display: none;">
+            <!-- Los filtros para las variables se agregarán aquí dinámicamente -->
+        </div>
+        <div id="truth-table"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
