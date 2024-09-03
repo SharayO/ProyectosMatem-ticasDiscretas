@@ -23,17 +23,19 @@ function evaluateFunction() {
     }
 
     try {
-        // Convertir x a radianes si es necesario (ejemplo: x = 90 grados)
-        const radianValue = math.unit(x, 'deg').toNumber('rad');
-
-        // Reemplazar valores de grados en la función con radianes
-        const formattedFunc = func.replace(/(\d+(\.\d+)?)\s*(deg)/g, (_, val) => {
-            const radians = math.unit(val, 'deg').toNumber('rad');
-            return radians;
-        });
-
-        const parsedFunction = math.compile(formattedFunc);
-        const result = parsedFunction.evaluate({ x: radianValue });
+        // Preparar la función para evaluar en grados o radianes dependiendo del caso
+        let result;
+        
+        if (func.includes('sin') || func.includes('cos') || func.includes('tan')) {
+            // Convertir x a radianes si la función es trigonométrica
+            const radianValue = math.unit(x, 'deg').toNumber('rad');
+            const parsedFunction = math.compile(func);
+            result = parsedFunction.evaluate({ x: radianValue });
+        } else {
+            // Evaluar normalmente para otras funciones
+            const parsedFunction = math.compile(func);
+            result = parsedFunction.evaluate({ x: x });
+        }
 
         // Redondear el resultado y mostrar valores enteros como enteros
         const threshold = 1e-10; // Umbral para considerar valores cercanos a cero como 0
