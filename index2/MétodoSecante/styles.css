@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kite+One&family=Lilita+One&display=swap');
+
+body {
+    font-family: 'Lilita One', sans-serif;
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+.calculator {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    margin-top: 130px;
+    border-radius: 8px;
+    transform: scale(120%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: 'Lilita One', sans-serif;
+    font-weight: 100;
+    color: #000000;
+    text-align: center;
+}
+
+label {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: bold;
+    display: block;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin-left: 25px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.buttons {
+    display: flex;
+    gap: 0px;
+}
+
+button.calculate {
+    font-family: "Lilita One", sans-serif;
+    font-weight: normal;
+    padding: 10px;
+    width: 38%;
+    margin-top: 10px;
+    margin-left: 25px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    font-size: 1.0em;
+    border: none;
+    border-radius: 15px;
+    display: center;
+    justify-content: space-between;
+    background-color: #ed401d;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+button {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: bold;  
+    text-align: center;
+    grid-column: span 4;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+button:hover {
+    background-color: #074053;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+button.calculate::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+button.calculate::before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+button.calculate:hover::before {
+    opacity: 1;
+}
+
+button.calculate:active:after {
+    background: transparent;
+}
+
+button.calculate:active {
+    color: #000;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ed401d;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #f5684c;
+    color: white;
+}

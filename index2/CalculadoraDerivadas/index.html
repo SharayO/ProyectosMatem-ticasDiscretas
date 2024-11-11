@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Derivadas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Derivadas en un Punto</h1>
+        <form id="derivadaForm">
+            <label for="funcion">Función f(x):</label>
+            <input type="text" id="funcion" placeholder="Ej. x^3 + 2*x" required>
+            <label for="x0">Valor de x₀:</label>
+            <input type="number" id="x0" step="any" required>
+            <div class="buttons">
+                <button class="generate" type="button" onclick="calcularDerivadas()">Calcular</button>
+                <button class="generate" type="button" onclick="borrarResultados()">Borrar</button>
+            </div>
+        </form>
+
+        <table id="resultadosTabla" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Orden</th>
+                    <th>Derivada</th>
+                </tr>
+            </thead>
+            <tbody id="resultados">
+                <!-- Resultados aparecerán aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.0/math.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

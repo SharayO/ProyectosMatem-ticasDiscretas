@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Booleana</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculadora Booleana</h1>
+        <div class="controls">
+            <div class="inputs">
+                <label for="varA">A:</label>
+                <select id="varA">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+                <label for="varB">B:</label>
+                <select id="varB">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+
+            <div class="display">
+                <div id="selectedOperation">Selecciona una operación:</div>
+            </div>
+
+            <div class="buttons">
+                <button data-operation="and">A ∧ B</button>
+                <button data-operation="or">A ∨ B</button>
+                <button data-operation="xor">A ⊕ B</button>
+                <button data-operation="notA">¬A</button>
+                <button data-operation="notB">¬B</button>
+                <button data-operation="implication">A → B</button>
+                <button data-operation="biconditional">A ↔ B</button>
+                <button class="btn-clear" onclick="clearInput()">Limpiar</button>
+                <button id="generateTable" class="generateTable">Generar Tabla</button>
+            </div>
+        </div>
+        <h2>Tabla de Verdad:</h2>
+        <table id="truthTable">
+            <thead>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas se generarán dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora del Método de la Secante</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Método de la Secante</h1>
+        <label for="funcion">Función f(x):</label>
+        <input type="text" id="funcion">
+        
+        <label for="x0">Límite Inferior (x<sub>0</sub>):</label>
+        <input type="number" id="x0">
+        
+        <label for="x1">Límite Superior (x<sub>1</sub>):</label>
+        <input type="number" id="x1">
+        
+        <label for="tolerancia">Error de Tolerancia:</label>
+        <input type="number" id="tolerancia" step="0.0001">
+        
+        <div class="buttons">
+            <button class="calculate" id="calcular">Calcular</button>
+            <button class="calculate" id="borrar">Borrar</button>
+        </div>
+        
+        <h2 id="resultado-titulo" style="display:none;">Resultados:</h2>
+        <p id="resultado-raiz" style="display:none;"></p>
+        <div class="table-container">
+            <table id="resultado-tabla" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>Iteración</th>
+                        <th>x</th>
+                        <th>F(x)</th>
+                        <th>ε<sub>r</sub></th>
+                    </tr>
+                </thead>
+                <tbody id="resultado-body"></tbody>
+            </table>
+        </div>        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

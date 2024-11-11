@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Newton-Raphson</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #iteracionesTabla, #newtonChart {
+            display: none; /* Oculta la tabla inicialmente */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Método de Newton-Raphson</h1>
+        <form id="newtonForm">
+            <label for="funcion">Función f(x):</label>
+            <input type="text" id="funcion" required>
+            
+            <label for="inicial">Valor inicial (x<sub>0</sub>):</label>
+            <input type="number" id="inicial" step="any" required>
+            
+            <label for="tolerancia">Error de Tolerancia:</label>
+            <input type="number" id="tolerancia" step="any" required>
+            
+            <button class="calculate" type="submit">Calcular</button>
+            <button class="calculate" id="borrar" type="button">Borrar</button> <!-- Cambié type="submit" a "button" para evitar que el botón 'borrar' recargue la página -->
+        </form>
+
+        <div class="resultado" id="resultado"></div> <!-- Aquí se mostrará la raíz aproximada -->
+        
+        <table id="iteracionesTabla">
+            <thead>
+                <tr>
+                    <th>Iteración</th>
+                    <th>x<sub>r</sub></th>
+                    <th>f(x<sub>r</sub>)</th>
+                    <th>ε<sub>r</sub></th> <!-- Nueva columna para el error relativo -->
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+        <canvas id="newtonChart"></canvas>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

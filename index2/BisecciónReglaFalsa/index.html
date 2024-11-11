@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Método de Bisección y Regla Falsa</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Método de Bisección y Regla Falsa</h2>
+        <form id="biseccionForm">
+            <label for="funcion">Función f(x):</label>
+            <input type="text" id="funcion" >
+
+            <label for="limiteInferior">Límite Inferior a:</label>
+            <input type="number" id="limiteInferior" >
+
+            <label for="limiteSuperior">Límite Superior b:</label>
+            <input type="number" id="limiteSuperior" >
+
+            <label for="tolerancia">Error de Tolerancia:</label>
+            <input type="number" id="tolerancia" step="any" >
+
+            <button class="calculate" type="submit">CALCULAR</button>
+            <button class="calculate" type="reset">BORRAR</button>
+        </form>
+    </div>
+
+    <div class="resultados-container" id="resultadosContainer" style="display:none;">
+        <h2>Resultados</h2>
+        <table id="resultadosTable">
+            <tr>
+                <th>Iteración<br><i>n</i></th>
+                <th>Extremo Inferior<br><i>a</i></th>
+                <th>Extremo Superior<br><i>b</i></th>
+                <th>Imagen Ext. Inf.<br><i>f(a)</i></th>
+                <th>Imagen Ext. Sup.<br><i>f(b)</i></th>
+                <th>Raíz<br><i>r<sub>n</sub></i></th>
+                <th>Imagen raíz<br><i>f(r<sub>n</sub>)</i></th>
+                <th>Error relativo<br><i>ε<sub>r</sub></i></th>
+            </tr>
+            <!-- Aquí se agregarán los resultados -->
+        </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

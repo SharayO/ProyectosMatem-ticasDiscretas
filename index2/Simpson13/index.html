@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Método Simpson 1/3</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.1.1/math.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Método Simpson 1/3</h1>
+        
+        <label for="funcion">Función f(x):</label>
+        <input type="text" id="funcion">
+
+        <label for="a">Límite izquierdo (a):</label>
+        <input type="number" id="a">
+
+        <label for="b">Límite derecho (b):</label>
+        <input type="number" id="b">
+
+        <label for="n">Número de particiones (n):</label>
+        <input type="number" id="n">
+
+        <button class="calculate" onclick="calcular()">C A L C U L A R</button>
+        <button class="calculate" onclick="resetear()">B O R R A R</button>
+
+        <div id="resultados" style="display: none;">
+            <div id="integralImagen"></div>
+            <h2>Resultados</h2>
+            <p>Integral aproximada: <span id="resultado"></span></p>
+            <p>Error: <span id="error"></span></p>
+        </div>        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
