@@ -28,11 +28,17 @@ function calcularDerivadas() {
             // Evaluar la derivada en x0
             let valorDerivada = derivada.evaluate({ x: x0 });
             
+            // Crear una representación LaTeX para la derivada
+            let derivadaLatex = `f^{(${i})}(x) = ${derivada.toTex()}`;
+            
             // Agregar fila a la tabla con el valor de la derivada evaluada
             let row = document.createElement("tr");
-            row.innerHTML = `<td>${i}°</td><td>${valorDerivada}</td>`;
+            row.innerHTML = `<td>\\(${derivadaLatex}\\)</td><td>${valorDerivada}</td>`;
             tabla.appendChild(row);
         }
+
+        // Renderizar las ecuaciones en LaTeX con MathJax
+        MathJax.typesetPromise();
     } catch (error) {
         alert("Error: " + error.message);
     }
