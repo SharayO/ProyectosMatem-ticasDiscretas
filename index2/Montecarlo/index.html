@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integración Numérica - Método de Monte Carlo</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS externo -->
+</head>
+<body>
+
+<div class="calculator">
+    <h2>Integración Numérica Por Método de Monte Carlo</h2>
+    
+    <div class="input-section">
+        <label>Función f(x):</label>
+        <input type="text" id="funcion" placeholder="Ej: Math.sin(x)">
+        
+        <label>Extremo izquierdo: a =</label>
+        <input type="number" id="a" placeholder="0">
+        
+        <label>Extremo derecho: b =</label>
+        <input type="number" id="b" placeholder="1">
+        
+        <label>Número de puntos: N =</label>
+        <input type="number" id="n" placeholder="1000">
+    </div>
+    
+    <div class="buttons">
+        <button onclick="calcular()">Calcular</button>
+        <button onclick="borrar()">Borrar</button>
+        <button onclick="salir()">Salir</button>
+    </div>
+    
+    <div class="output">
+        <label>Integral: ∫<sub>a</sub><sup>b</sup> f(x) dx</label>
+        <label>Número de puntos contados: <span id="puntosContados"></span></label>
+        <label>Valor de la integral: <span id="resultado"></span></label>
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- Enlace al archivo JS externo -->
+</body>
+</html>
