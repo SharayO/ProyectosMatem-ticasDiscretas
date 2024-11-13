@@ -1,0 +1,50 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #000;
+}
+
+h2, h3 {
+    background-color: #00aaff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#pointsTable {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+#pointsTable div {
+    margin: 5px;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+#results div {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Ajuste del ancho del cuadro de texto en los resultados */
+#results input[type="text"] {
+    width: calc(100% - 60px); /* Ajuste automático para ocupar espacio sin afectar el layout */
+    font-size: 1em;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#results span {
+    margin-left: 10px;
+    font-weight: bold;
+}
