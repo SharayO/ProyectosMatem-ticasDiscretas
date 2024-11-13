@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+    padding: 50px;
+}
+
+.calculator {
+    display: inline-block;
+    padding: 20px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], input[type="number"], input[type="submit"] {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.result {
+    font-weight: bold;
+    margin-top: 20px;
+}
